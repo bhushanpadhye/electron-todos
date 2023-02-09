@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Todos</title>
+</head>
+<body>
+    <h1>My Todos</h1>
+    <hr/>
+    <ul id="todo-list"></ul>
+    <script>
+        const todoList = document.querySelector('#todo-list');
+        const electron = require('electron');
+        const { ipcRenderer } = electron;
+
+        ipcRenderer.on('todo:show', (event, todo) => {
+            let li = document.createElement('li');
+            let textNode = document.createTextNode(todo);
+            li.append(textNode);
+            todoList.append(li);
+        });
+
+        ipcRenderer.on('todo:clear', () => {
+            todoList.innerHTML = '';
+        })
+    </script>
+</body>
+</html>

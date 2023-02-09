@@ -1,0 +1,22 @@
+{
+  "name": "todos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "electron": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhushanpadhye/electron-todos.git"
+  },
+  "author": "bhushan.padhye@outlook.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhushanpadhye/electron-todos/issues"
+  },
+  "homepage": "https://github.com/bhushanpadhye/electron-todos#readme",
+  "dependencies": {
+    "electron": "^23.0.0"
+  }
+}
